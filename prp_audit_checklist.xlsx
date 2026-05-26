@@ -1,0 +1,17 @@
+import pandas as pd
+
+# Structural components for setting up the digital audit workbook sheet layout
+prp_columns = [
+    "Audit_Item_ID", "PRP_Category", "Specific_Requirement",
+    "Score_Assigned", "Max_Score", "Verification_Evidence", "Corrective_Action_Owner"
+]
+
+prp_rows = [
+    ["PRP-1.01", "Personnel Hygiene", "Medical clearance certificates valid for all food handling staff.", 0, 5, "No active certs on current shift", "Plant Manager"],
+    ["PRP-1.02", "Personnel Hygiene", "Protective equipment (aprons, hairnets) completely clean and correctly deployed.", 4, 5, "Minor breach at cutting table", "Floor Supervisor"],
+    ["PRP-2.01", "Sanitation Infrastructure", "Footbaths operational at point-of-entry with disinfectant > 200ppm chlorine equivalent.", 5, 5, "Titration test passed", "Sanitation Lead"],
+    ["PRP-3.01", "Layout & Equipment Surface", "Food contact structural elements completely free of cracks, stagnation zones, or structural oxidation.", 2, 5, "Microbial trapping seams found on line 2", "Maintenance Engineer"]
+]
+
+prp_df = pd.DataFrame(prp_rows, columns=prp_columns)
+# Formula calculation logic to add automatically in Excel: Total compliance % = (SUM(Score) / SUM(Max_Score)) * 100
