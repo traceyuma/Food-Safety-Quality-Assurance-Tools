@@ -36,5 +36,5 @@ def evaluate_microbial_load(colony_count, dilution_factor, sample_volume_ml=1.0)
 if __name__ == "__main__":
     print("[Testing Run]: High load detection sample:")
     assay_test = evaluate_microbial_load(colony_count=142, dilution_factor=1)
-    print(f"Microbial Load: {assay_test['calculated_cfu']} CFU/g | Status: {assay_test['regulatory_status']}")
+    print(f"Microbial Load: {assay_test['calculated_cfu']} CFU/g | Status: {assay_test['regulatory_status']}") 
   
